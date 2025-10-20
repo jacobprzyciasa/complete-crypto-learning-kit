@@ -42,12 +42,12 @@ export const productList: productListTypes[] = [
         name: "Chart Master Tool",
         description: "Train concepts from the PDF in real time on your own chart",
         image: Chart_Master,
-        url: "https://whop.com/complete-crypto-learning-kit/prepare-for-the-future-demo/"
+        url: "https://whop.com/complete-crypto-learning-kit/chart-master/"
     },
     {
         name: "Special Offer",
         description: "I Will Teach You How To Read Again + Chart Master",
         image: Special_Offer,
-        url: "https://whop.com/complete-crypto-learning-kit/prepare-for-the-future-demo/"
+        url: "https://whop.com/complete-crypto-learning-kit/special-offer-6c"
     },
 ]

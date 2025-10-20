@@ -6,21 +6,10 @@ interface HamburgerMenuProps {
 
 function HamburgerMenu({ isScrolled }: HamburgerMenuProps) {
   const [isOpen, setIsOpen] = useState(false)
-  const [showChartMaster, setChartMaster] = useState(false)
+  
   const [showAbout, setShowAbout] = useState(false)
 
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-
-    const chartMasterInPath = window.location.pathname.includes('chartmaster');
-    const chartMasterQueryParamPresent = params.has('chartmaster') && params.get('chartmaster')?.toLowerCase() !== 'false';
-    setChartMaster(chartMasterInPath || chartMasterQueryParamPresent);
-
-    const aboutInPath = window.location.pathname.includes('about');
-    const aboutQueryParamPresent = params.has('about') && params.get('about')?.toLowerCase() !== 'false';
-    setShowAbout(aboutInPath || aboutQueryParamPresent);
-
-  }, []); // Run once on component mount
+  
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
@@ -57,40 +46,15 @@ function HamburgerMenu({ isScrolled }: HamburgerMenuProps) {
           isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'
         }`}
       >
-        <nav className="flex flex-col py-2">
-          <a
-            href="/"
-            className="text-black font-spartan text-sm font-medium px-4 py-2.5 hover:bg-gray-100 transition-colors"
-            onClick={toggleMenu}
-          >
-            Home
-          </a>
-          {showAbout && ( // Conditionally render About
+        <div className="flex flex-col py-2">
             <a
-              href="#about"
+              href="https://www.tradingview.com/script/IhKShMmp-Chart-Master/"
               className="text-black font-spartan text-sm font-medium px-4 py-2.5 hover:bg-gray-100 transition-colors"
               onClick={toggleMenu}
             >
-              About
+              Launch Chart Master
             </a>
-          )}
-          {showChartMaster && (
-            <a
-              href="/chartmaster"
-              className="text-black font-spartan text-sm font-medium px-4 py-2.5 hover:bg-gray-100 transition-colors"
-              onClick={toggleMenu}
-            >
-              Chart Master
-            </a>
-          )}
-          <a
-            href="#contact"
-            className="text-black font-spartan text-sm font-medium px-4 py-2.5 hover:bg-gray-100 transition-colors"
-            onClick={toggleMenu}
-          >
-            Contact
-          </a>
-        </nav>
+        </div>
       </div>
     </div>
   )

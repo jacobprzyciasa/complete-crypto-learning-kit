@@ -4,6 +4,16 @@ import HamburgerMenu from "./Hamburger";
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showChartMaster, setChartMaster] = useState(false)
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+
+    const chartMasterInPath = window.location.pathname.includes('chartmaster');
+    const chartMasterQueryParamPresent = params.has('chartmaster') && params.get('chartmaster')?.toLowerCase() !== 'false';
+    setChartMaster(chartMasterInPath || chartMasterQueryParamPresent);
+
+  }, []); // Run once on component mount
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,7 +34,7 @@ function Header() {
           ? 'bg-[#FFFFFF] h-14 shadow-lg' 
           : 'bg-transparent h-10'
       }`}>
-        {/* <HamburgerMenu isScrolled={isScrolled} /> */}
+        {showChartMaster && <HamburgerMenu isScrolled={isScrolled} />}
       <p className={`${isScrolled ? 'text-black sm:text-3xl text-xl' : 'text-white text-xl text-shadow-lg'} font-bold text-3xl font-spartan uppercase mt-1`}>
         Complete Crypto Learning Kit
       </p>
