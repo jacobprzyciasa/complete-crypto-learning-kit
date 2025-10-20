@@ -51,6 +51,7 @@ function HamburgerMenu({ isScrolled }: HamburgerMenuProps) {
               href="https://www.tradingview.com/script/IhKShMmp-Chart-Master/"
               className="text-black font-spartan text-sm font-medium px-4 py-2.5 hover:bg-gray-100 transition-colors"
               onClick={toggleMenu}
+              target='_blank'
             >
               Launch Chart Master
             </a>
