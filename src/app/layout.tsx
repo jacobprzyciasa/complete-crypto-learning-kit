@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { EB_Garamond, League_Spartan } from "next/font/google";
+import { Toaster } from "../Components/ui/sonner";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const garamond = EB_Garamond({
+  weight: ["400", "500", "600", "700", "800"],
   subsets: ["latin"],
+  variable: "--font-garamond",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const league_spartan = League_Spartan({
+  weight: ["300", "500", "600", "700", "800"],
   subsets: ["latin"],
+  variable: "--font-league-spartan",
 });
 
 export const metadata: Metadata = {
@@ -25,9 +28,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${garamond.variable} ${league_spartan.variable} antialiased`}
       >
         {children}
+        <Toaster />
       </body>
     </html>
   );
