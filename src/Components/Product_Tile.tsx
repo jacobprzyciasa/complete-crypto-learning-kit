@@ -39,7 +39,7 @@ export default function ProductTile({ name, description, image, url }: productLi
   };
 
   const handleClick = () => {
-    window.location.href = url;
+    window.open(url, '_blank');
   };
 
   return (

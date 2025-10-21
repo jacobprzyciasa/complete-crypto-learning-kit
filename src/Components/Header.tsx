@@ -34,7 +34,7 @@ function Header() {
           ? 'bg-[#FFFFFF] h-14 shadow-lg' 
           : 'bg-transparent h-10'
       }`}>
-        {showChartMaster && <HamburgerMenu isScrolled={isScrolled} />}
+        {/* {showChartMaster && <HamburgerMenu isScrolled={isScrolled} />} */}
       <p className={`${isScrolled ? 'text-black sm:text-3xl text-xl' : 'text-white text-xl text-shadow-lg'} font-bold text-3xl font-spartan uppercase mt-1`}>
         Complete Crypto Learning Kit
       </p>
